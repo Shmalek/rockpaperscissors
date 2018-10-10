@@ -2,8 +2,17 @@
   text-align:center;
   
 }
+
 #choices{
   display:flex;
-  justify-content:space-between;
+  justify-content:space-evenly;
   
 }
+
+img{
+  
+  width: 200px;
+  height: 200px;
+  
+}
+
