@@ -13,27 +13,41 @@ $(document).ready(function() {
 
     $("#shoot").click(function(){
 
-        var userChoice = $("#userChoice").text($("#input").val());
-        
+        var userChoice =$("#input").val();
+         $("#userChoice").text(userChoice);
         var random = Math.random();
         var computerChoice;
         
         if(random > 0.3333 && random < .6666){
-            
             computerChoice = "rock"
-            
-        } else if(random < .3333 && random > 0){
-            
+        } else if(random < .3333){
             computerChoice = "scissors"
-            
         } else if(random > .6666 && random < 1){
-            
             computerChoice = "paper"
+        }
+        
+        if(userChoice === computerChoice){
+            $("#result").text("Tie");
+        } else if(userChoice === "rock" && computerChoice === "paper"){
+            $("#result").text("Computer Wins");
+        } else if(userChoice === "rock" && computerChoice === "scissors"){
+            $("#result").text("User Wins");
+        } else if(userChoice === "paper" && computerChoice === "scissors"){
+            $("#result").text("Computer Wins");
+        } else if(userChoice === "paper" && computerChoice === "rock"){
+            $("#result").text("User Wins");
+        } else if(userChoice === "scissors" && computerChoice === "rock"){
+            $("#result").text("Computer Wins");
+        } else if(userChoice === "scissors" && computerChoice === "paper"){
+            $("#result").text("User Wins");
+        } 
+        
+        if(userChoice !== "rock" || "scissors" || "paper"){
+            alert("Please type rock, paper, or scissors");
+            $("#userChoice").text("");
         }
 
         $("#computerChoice").text(computerChoice);
-        
-        
         
         
     });    
