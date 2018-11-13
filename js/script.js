@@ -26,26 +26,30 @@ $(document).ready(function() {
             computerChoice = "paper"
         }
         
-        if(userChoice === computerChoice){
-            $("#result").text("Tie");
-        } else if(userChoice === "rock" && computerChoice === "paper"){
-            $("#result").text("Computer Wins");
-        } else if(userChoice === "rock" && computerChoice === "scissors"){
-            $("#result").text("User Wins");
-        } else if(userChoice === "paper" && computerChoice === "scissors"){
-            $("#result").text("Computer Wins");
-        } else if(userChoice === "paper" && computerChoice === "rock"){
-            $("#result").text("User Wins");
-        } else if(userChoice === "scissors" && computerChoice === "rock"){
-            $("#result").text("Computer Wins");
-        } else if(userChoice === "scissors" && computerChoice === "paper"){
-            $("#result").text("User Wins");
-        } 
         
-        if(userChoice !== "rock" || "scissors" || "paper"){
+        if(userChoice === "rock"||userChoice === "paper"||userChoice === "scissors"){
+            
+            if(userChoice === computerChoice){
+                $("#result").text("Tie");
+            } else if(userChoice === "rock" && computerChoice === "paper"){
+                $("#result").text("Computer Wins");
+            } else if(userChoice === "rock" && computerChoice === "scissors"){
+                $("#result").text("User Wins");
+            } else if(userChoice === "paper" && computerChoice === "scissors"){
+                $("#result").text("Computer Wins");
+            } else if(userChoice === "paper" && computerChoice === "rock"){
+                $("#result").text("User Wins");
+            } else if(userChoice === "scissors" && computerChoice === "rock"){
+                $("#result").text("Computer Wins");
+            } else if(userChoice === "scissors" && computerChoice === "paper"){
+                $("#result").text("User Wins");
+            }
+            
+        } else if(userChoice !== "rock" || userChoice !== "scissors" || userChoice !== "paper"){
             alert("Please type rock, paper, or scissors");
             $("#userChoice").text("");
         }
+        
 
         $("#computerChoice").text(computerChoice);
         
